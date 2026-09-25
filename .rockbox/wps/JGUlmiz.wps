@@ -1,0 +1,160 @@
+# Rockbox Theme Name: JGUlmiz
+# Platform: Hiby R1 (480x800)
+# Author: Simon Rothen (rothen@gmx.net)
+# Licencing: CC-BY-SA 3.0
+# iconset taken from advaitapod theme vector files
+# repeat & shuffle icons derived from Gnome-Shell high contrast icons
+#
+# Version: 1.1
+# Date: 2026-09-08
+#
+# WPS File
+#
+# Additional Fonts
+%Fl(3,45-Ubuntu-Medium.fnt)
+%Fl(4,50-Ubuntu-Medium.fnt)
+%Fl(8,36-Ubuntu-Regular.fnt)
+%Fl(6,240-Ubuntu-Bold.fnt)
+#
+# Disable Status Bar
+%wd
+#
+%V(0,0,-,-,-)%VB
+%x(backdrop,wps_bg.bmp,0,0)|
+%?C<%x(shadow,aa_shadow.bmp,13,29)>
+#
+#%x(backdrop,wps_bg.bmp,0,0)|
+%V(0,0,-,-,-)
+#
+#conditional: albumart or big volumen on volume change
+%?mv(1.5)<%Vd(volumen)|%Vd(albumart)> 
+#%?mv(1.5)<%Vd(volumen)|%?Tl(infoscreen,3)<%Vd(brightness)|%Vd(albumart)>> 
+#
+### Touch Areas
+# Quickscreen
+%T(0,0,140,55,quickscreen)
+#
+# Menu
+%T(170,0,140,55,menu)
+#
+# Contextmenu
+%T(340,0,-,55,contextmenu)
+#
+%V(0,0,-,-,-)
+# Files/DB
+%T(0,58,-,160,browse,long_press)
+# Playlist
+%T(playlist,0,224,-,160,playlist,long_press)
+%T(infoscreen,0,58,-,390,none)
+#
+### VIEWPORTS
+# Volume
+%xl(y,speaker.bmp,0,0,15)
+%V(10,7,32,48,-)
+%?pL<%xd(ya)|%xd(yb)|%xd(yc)|%xd(yd)|%xd(ye)|%xd(yf)|%xd(yg)|%xd(yh)|%xd(yi)|%xd(yj)|%xd(yk)|%xd(yl)|%xd(ym)|%xd(yn)|%xd(yo)|%xd(yo)|%xd(yo)|>
+%V(45,15,100,30,8) %Vf(cccccc)
+%al%?if(%pv,<=,-1000)<%ss(0,4,%pv)|%?if(%pv,>,-100)<%?if(%pv,>=,0)<%ss(0,1,%pv)|%ss(0,2,%pv)>|%ss(0,3,%pv)>>dB
+#
+# Clock
+%V(160,15,160,35,8) %Vf(cccccc)
+%ac%?cf<%ck:%cM|     %cl:%cM %cp>
+#
+# Battery
+%V(350,15,90,30,8)%Vf(cccccc)
+%ar%bl%%
+%V(450,17,15,28,-)%Vf(cccccc)
+%dr(4,1,6,3)
+%?bc<%Vf(99dd99)|%?bl<|%Vf(ee9999)||||>> 
+%bl(0,4,-,-,vertical)
+#
+# Brightness Slider
+#%Vl(brightness,7,80,-7,50,-)
+#%St(0,0,-,-,invert,setting,brightness)
+#%T(brightness_adj,432,0,48,-,setting_set, brightness, 100) 
+#%T(brightness_adj,284,0,48,-,setting_set, brightness, 85) 
+#%T(brightness_adj,336,0,48,-,setting_set, brightness, 75) 
+#%T(brightness_adj,288,0,48,-,setting_set, brightness, 65) 
+#%T(brightness_adj,240,0,48,-,setting_set, brightness, 55) 
+#%T(brightness_adj,192,0,48,-,setting_set, brightness, 45) 
+#%T(brightness_adj,144,0,48,-,setting_set, brightness, 35) 
+#%T(brightness_adj,96,0,48,-,setting_set, brightness, 25) 
+#%T(brightness_adj,48,0,48,-,setting_set, brightness, 15) 
+#%T(brightness_adj,0,0,48,-,setting_set, brightness, 5) 
+#
+# Albumart
+%Vl(albumart,41,58,396,366,-)
+%Cl(0,0,396,366,c,c)
+%?C<%Cd>
+#
+# Volumen Big
+# hybi palyer with 0.5 dB steps: when comparing, -10.5 is -105 etc.
+%Vl(volumen,36,130,406,284,6)
+%ac%?if(%pv,<=,-1000)<%ss(0,4,%pv)|%?if(%pv,>,-100)<%?if(%pv,>=,0)<%ss(0,1,%pv)|%ss(0,2,%pv)>|%ss(0,3,%pv)>>
+#
+# Album
+%V(36,441,284,40,8)%Vf(cccccc)%Vb(333333)
+%s%ac%?id<%id>
+#
+# Year
+%V(336,441,107,40,8)%Vf(f6e9dc)%Vb(472d10)
+%ac%?iy<%ss(0,4,%iy)>
+#
+# Artist
+%V(16,488,448,54,3)%Vf(f2f2f2)%Vb(222222)
+%s%ac%ia
+#
+# Title
+%V(16,546,448,54,4)%Vf(222222)%Vb(f2f2f2)
+%s%ac%?mp<|%it|%t(0.5)%it;%t(0.5)|%pc %>%>|%<%< %pc|%it>
+#%s%ac%?it<%it|%fn>
+#
+# Progressbar
+%V(0,610,-,90,-)%Vb(111111)%Vf(ff9500)
+# the touch area for the progressbar is bigger than the progressbar itself
+%T(seek,0,0,-,-,progressbar)
+%pb(22,20,436,13,notouch)
+#
+# Time elapsed
+%V(25,650,116,28,8)%Vf(cccccc)
+%al%pc
+#
+# Time total
+%V(339,650,116,28,8)%Vf(cccccc)
+%ar%pt
+#
+# Playlist position
+%V(130,650,220,28,8)%Vf(dddddd)
+%ac%s%pp %Sx(of) %pe
+#
+# Shuffle
+%xl(shuffle,shuffle.bmp,15,16)
+%V(10,700,60,60,-)%Vb(222222)
+%?ps<%Vf(ff9500)|%Vf(555555)>
+%T(shuffle,0,0,-,-,shuffle)
+%xd(shuffle)
+#
+# Previous, Rewind
+%V(90,700,80,60,1)
+%T(0,0,-,-,rwd,repeat_press)
+%T(rr,0,0,-,-,wps_prev)
+#
+# Play, Pause, Stop
+%xl(play,play.bmp,41,16,3)
+%V(185,700,110,60,1)
+#Stop, Play, Pause, Fast Forward, Rewind, Recording, Recording paused, FM Radio playing, FM Radio muted 
+%?mp<%xd(play,1)|%xd(play,3)|%xd(play,2)|%xd(play,3)|%xd(play,3)>
+%T(0,0,-,-,stop,long_press)
+%T(play,0,0,-,-,play)
+#
+# Next, Forward
+%V(310,700,80,60,1)
+%T(0,0,-,-,ffwd,repeat_press)
+%T(ff,0,0,-,-,wps_next)
+#
+# Repeat mode
+%xl(r,repeat.bmp,15,16,4)
+%V(410,700,60,60,-)%Vb(222222)
+%?mm<%Vf(555555)|%Vf(ff9500)>
+%T(repeat,0,0,-,-,repmode)
+%T(0,0,-,-,setting_set,repeat,off,long_press) 
+%?mm<%xd(ra)|%xd(ra)|%xd(rb)|%xd(rc)|%xd(rd)>
