@@ -1,12 +1,13 @@
-# Rockbox Theme Name: JGUlmiz
+# Rockbox Theme Name: MD3
 # Platform: Hiby R1 (480x800)
-# Author: Simon Rothen (rothen@gmx.net)
+# Original Author: Simon Rothen (rothen@gmx.net)
+# MD3 Port: Julian Gödde
 # Licencing: CC-BY-SA 3.0
 # iconset taken from advaitapod theme vector files
 # repeat & shuffle icons derived from Gnome-Shell high contrast icons
 #
-# Version: 1.1
-# Date: 2026-09-08
+# Version: 2.0
+# Date: 2026-10-24
 #
 # WPS File
 #

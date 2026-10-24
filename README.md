@@ -1,4 +1,4 @@
-# hiby-r1-rockbox-jgulmiz
+# hiby-r1-rockbox-md3
 
 A Material Design 3 Port of Simon Rothens "Ulmiz" Theme for the HiBy R1 Rockbox
 
@@ -27,3 +27,13 @@ The pixel sizes are chosen so cap heights match the Ubuntu fonts the theme used 
 taller line boxes, so text sits 1–2px lower in its viewport than it did with Ubuntu.
 
 The fonts cover Latin only (403 glyphs). Greek and Cyrillic tags fall back to the default character.
+
+## Credits
+
+- Based on the "Ulmiz" theme by Simon Rothen (rothen@gmx.net), licensed under
+  [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). This port is released under the same license.
+- Icon set taken from the advaitapod theme vector files.
+- Repeat & Shuffle icons derived from the Gnome-Shell High Contrast icons.
+- [DM Sans](https://fonts.google.com/specimen/DM+Sans) by Colophon Foundry, licensed under the SIL Open Font License 1.1.
+- `convttf` from the [Rockbox](https://www.rockbox.org/) project, licensed under the GPL.
+- MD3 port by Julian Gödde.
