@@ -11,9 +11,9 @@
 # SBS File
 #
 # Additional Fonts
-%Fl(3,45-Ubuntu-Medium.fnt)
-%Fl(4,50-Ubuntu-Medium.fnt)
-%Fl(8,36-Ubuntu-Regular.fnt)
+%Fl(3,42-DMSans-Medium.fnt)
+%Fl(4,48-DMSans-Medium.fnt)
+%Fl(8,35-DMSans-Regular.fnt)
 #
 %X(sbs_bg.bmp)
 #
