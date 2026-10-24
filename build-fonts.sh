@@ -9,8 +9,8 @@ OUT=.rockbox/fonts
 SRC=source-fonts
 mkdir -p "$OUT"
 
-./convttf -p 35 -o "$OUT/35-DMSans-Regular.fnt" "$SRC/DMSans-Regular.ttf"
-./convttf -p 42 -o "$OUT/42-DMSans-Medium.fnt" "$SRC/DMSans-Medium.ttf"
-./convttf -p 48 -o "$OUT/48-DMSans-Medium.fnt" "$SRC/DMSans-Medium.ttf"
+./convttf -p 35 -o "$OUT/35-DMSans-Medium.fnt" "$SRC/DMSans-Medium.ttf"
+./convttf -p 42 -o "$OUT/42-DMSans-SemiBold.fnt" "$SRC/DMSans-SemiBold.ttf"
+./convttf -p 48 -o "$OUT/48-DMSans-SemiBold.fnt" "$SRC/DMSans-SemiBold.ttf"
 # Big volume display: only '+' through '9' are needed
-./convttf -p 230 -s 43 -l 57 -o "$OUT/230-DMSans-Medium.fnt" "$SRC/DMSans-Medium.ttf"
+./convttf -p 230 -s 43 -l 57 -o "$OUT/230-DMSans-SemiBold.fnt" "$SRC/DMSans-SemiBold.ttf"

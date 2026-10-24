@@ -16,12 +16,12 @@ To regenerate the fonts:
 ./build-fonts.sh
 ```
 
-| Font file               | Used for                                               |
-|-------------------------|--------------------------------------------------------|
-| `35-DMSans-Regular.fnt` | Status bar, album, year, times (font slot 8)           |
-| `42-DMSans-Medium.fnt`  | UI font and artist (font slot 3)                       |
-| `48-DMSans-Medium.fnt`  | Track title and menu title (font slot 4)               |
-| `230-DMSans-Medium.fnt` | Big volume display (font slot 6), only `+` through `9` |
+| Font file                 | Used for                                               |
+|---------------------------|--------------------------------------------------------|
+| `35-DMSans-Medium.fnt`    | Status bar, album, year, times (font slot 8)           |
+| `42-DMSans-SemiBold.fnt`  | UI font and artist (font slot 3)                       |
+| `48-DMSans-SemiBold.fnt`  | Track title and menu title (font slot 4)               |
+| `230-DMSans-SemiBold.fnt` | Big volume display (font slot 6), only `+` through `9` |
 
 The pixel sizes are chosen so cap heights match the Ubuntu fonts the theme used before (36/45/50/240). DM Sans has
 taller line boxes, so text sits 1–2px lower in its viewport than it did with Ubuntu.

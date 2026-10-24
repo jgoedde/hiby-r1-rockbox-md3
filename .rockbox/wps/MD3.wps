@@ -12,10 +12,10 @@
 # WPS File
 #
 # Additional Fonts
-%Fl(3,42-DMSans-Medium.fnt)
-%Fl(4,48-DMSans-Medium.fnt)
-%Fl(8,35-DMSans-Regular.fnt)
-%Fl(6,230-DMSans-Medium.fnt)
+%Fl(3,42-DMSans-SemiBold.fnt)
+%Fl(4,48-DMSans-SemiBold.fnt)
+%Fl(8,35-DMSans-Medium.fnt)
+%Fl(6,230-DMSans-SemiBold.fnt)
 #
 # Disable Status Bar
 %wd
