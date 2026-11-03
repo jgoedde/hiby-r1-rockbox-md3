@@ -67,7 +67,7 @@ contrast against the background, its tone is adjusted until it does (the generat
 Static files (fonts, 1-bit icons, `play.bmp`) live in `assets/`. It needs Python 3.15 (see `.python-version`).
 
 The easiest setup is the devcontainer in `.devcontainer/` (Python 3.15, dependencies installed, `convttf` runs):
-open the repository in VS Code or WebStorm and choose **Reopen in Container**. Without it, use a venv:
+open the repository in WebStorm (or any devcontainer-capable IDE) and create a dev container from `.devcontainer/devcontainer.json`. Without it, use a venv:
 
 ```sh
 python3.15 -m venv .venv
