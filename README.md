@@ -51,8 +51,20 @@ contrast against the background, its tone is adjusted until it does (the generat
 
 ## Development
 
-`tools/generate.py` fills the skin templates in `templates/` and draws all colour bitmaps. Static files (fonts, 1-bit
-icons, `play.bmp`) live in `assets/`. It needs Python 3.15 (see `.python-version`):
+`tools/generate.py` is the command line; the work happens in the `tools/md3/` package:
+
+| Module        | Does                                                              |
+|---------------|-------------------------------------------------------------------|
+| `variants.py` | The 8 variants and `--only` name lookup                           |
+| `colors.py`   | MD3 tokens per variant, accent contrast, WCAG contrast            |
+| `templates.py`| Fills `templates/MD3.{wps,sbs,cfg}.tpl`, CRLF/LF line endings     |
+| `drawing.py`  | Anti-aliased shapes and icons (supersampled masks)                |
+| `icons.py`    | Icon shapes (Material paths)                                      |
+| `bitmaps.py`  | Geometry and every colour bitmap of a skin                        |
+| `build.py`    | Writes one variant into a `.rockbox` folder                       |
+| `gitinfo.py`  | Version and date for the file headers                             |
+
+Static files (fonts, 1-bit icons, `play.bmp`) live in `assets/`. It needs Python 3.15 (see `.python-version`):
 
 ```sh
 python3.15 -m venv .venv
@@ -70,9 +82,10 @@ python tools/generate.py --only Dark-Pink --install /path/to/simdisk/.rockbox   
 `simdisk/.rockbox`) or with the player's `.rockbox` folder. The version in the file headers comes from
 `git describe`.
 
-Lint before committing (CI runs the same):
+Test and lint before committing (CI runs the same):
 
 ```sh
+pytest
 ruff check . && ruff format --check .
 ```
 
