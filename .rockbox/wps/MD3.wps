@@ -122,25 +122,29 @@
 #%s%ac%?it<%it|%fn>
 #
 # Progressbar
-# primary on surface
+# MD3 Expressive static wavy bar: wave (primary) cropped at progress, straight track
+# (secondaryContainer) with stop dot behind it, handle with background-coloured gaps.
+# All three bitmaps are opaque with the background baked in.
+%xl(pbtrack,pb_track.bmp,0,0)
+%xl(pbhandle,pb_handle.bmp,0,0)
 %V(0,610,-,90,-)%Vb(130d09)%Vf(ff9130)
 # the touch area for the progressbar is bigger than the progressbar itself
 %T(seek,0,0,-,-,progressbar)
-%pb(22,20,436,13,notouch)
+%pb(22,13,436,26,pb_fill.bmp,notouch,backdrop,pbtrack,slider,pbhandle)
 #
 # Time elapsed
 # onSurfaceVariant
-%V(25,650,116,28,8)%Vf(bba79b)
+%V(25,650,116,39,8)%Vf(bba79b)
 %al%pc
 #
 # Time total
 # onSurfaceVariant
-%V(339,650,116,28,8)%Vf(bba79b)
+%V(339,650,116,39,8)%Vf(bba79b)
 %ar%pt
 #
 # Playlist position
 # onSurfaceVariant
-%V(130,650,220,28,8)%Vf(bba79b)
+%V(130,650,220,39,8)%Vf(bba79b)
 %ac%s%pp %Sx(of) %pe
 #
 # Shuffle
