@@ -22,7 +22,6 @@
 #
 %V(0,0,-,-,-)%VB
 %x(backdrop,wps_bg.bmp,0,0)|
-%?C<%x(shadow,aa_shadow.bmp,13,29)>
 #
 #%x(backdrop,wps_bg.bmp,0,0)|
 %V(0,0,-,-,-)
@@ -49,21 +48,30 @@
 %T(infoscreen,0,58,-,390,none)
 #
 ### VIEWPORTS
+# Colours: MD3 dark scheme tokens, seed #FF9130 (Material Color Utilities, TonalSpot).
+# Exception: primary is the saturated seed ff9130 itself, not the pastel TonalSpot f4bb92.
+# Rockbox has no variables, so each hex value is annotated with its token.
+# %Vb must match the pill colour in wps_bg.bmp so anti-aliased text blends correctly.
+#
 # Volume
 %xl(y,speaker.bmp,0,0,15)
 %V(10,7,32,48,-)
 %?pL<%xd(ya)|%xd(yb)|%xd(yc)|%xd(yd)|%xd(ye)|%xd(yf)|%xd(yg)|%xd(yh)|%xd(yi)|%xd(yj)|%xd(yk)|%xd(yl)|%xd(ym)|%xd(yn)|%xd(yo)|%xd(yo)|%xd(yo)|>
-%V(45,15,100,30,8) %Vf(cccccc)
+# onSurfaceVariant
+%V(45,15,100,30,8) %Vf(bba79b)
 %al%?if(%pv,<=,-1000)<%ss(0,4,%pv)|%?if(%pv,>,-100)<%?if(%pv,>=,0)<%ss(0,1,%pv)|%ss(0,2,%pv)>|%ss(0,3,%pv)>>dB
 #
 # Clock
-%V(160,15,160,35,8) %Vf(cccccc)
+# onSurfaceVariant
+%V(160,15,160,35,8) %Vf(bba79b)
 %ac%?cf<%ck:%cM|     %cl:%cM %cp>
 #
 # Battery
-%V(350,15,90,30,8)%Vf(cccccc)
+# onSurfaceVariant
+%V(350,15,90,30,8)%Vf(bba79b)
 %ar%bl%%
-%V(450,17,15,28,-)%Vf(cccccc)
+# onSurfaceVariant
+%V(450,17,15,28,-)%Vf(bba79b)
 %dr(4,1,6,3)
 %?bc<%Vf(99dd99)|%?bl<|%Vf(ee9999)||||>> 
 %bl(0,4,-,-,vertical)
@@ -93,44 +101,53 @@
 %ac%?if(%pv,<=,-1000)<%ss(0,4,%pv)|%?if(%pv,>,-100)<%?if(%pv,>=,0)<%ss(0,1,%pv)|%ss(0,2,%pv)>|%ss(0,3,%pv)>>
 #
 # Album
-%V(36,443,284,40,8)%Vf(cccccc)%Vb(333333)
+# onSurfaceVariant on surfaceContainerHighest
+%V(36,443,284,40,8)%Vf(bba79b)%Vb(2f231b)
 %s%ac%?id<%id>
 #
 # Year
+# onPrimary on primary (seed orange, kept saturated)
 %V(336,443,107,40,8)%Vf(1a1410)%Vb(ff9130)
 %ac%?iy<%ss(0,4,%iy)>
 #
 # Artist
-%V(16,490,448,54,3)%Vf(f2f2f2)%Vb(222222)
+# onSurface on surfaceContainerHigh
+%V(16,490,448,54,3)%Vf(f7e1d4)%Vb(281e16)
 %s%ac%ia
 #
 # Title
-%V(16,548,448,54,4)%Vf(222222)%Vb(f2f2f2)
+# onPrimaryContainer on primaryContainer
+%V(16,548,448,54,4)%Vf(ffddc6)%Vb(724929)
 %s%ac%?mp<|%it|%t(0.5)%it;%t(0.5)|%pc %>%>|%<%< %pc|%it>
 #%s%ac%?it<%it|%fn>
 #
 # Progressbar
-%V(0,610,-,90,-)%Vb(111111)%Vf(ff9500)
+# primary on surface
+%V(0,610,-,90,-)%Vb(130d09)%Vf(ff9130)
 # the touch area for the progressbar is bigger than the progressbar itself
 %T(seek,0,0,-,-,progressbar)
 %pb(22,20,436,13,notouch)
 #
 # Time elapsed
-%V(25,650,116,28,8)%Vf(cccccc)
+# onSurfaceVariant
+%V(25,650,116,28,8)%Vf(bba79b)
 %al%pc
 #
 # Time total
-%V(339,650,116,28,8)%Vf(cccccc)
+# onSurfaceVariant
+%V(339,650,116,28,8)%Vf(bba79b)
 %ar%pt
 #
 # Playlist position
-%V(130,650,220,28,8)%Vf(dddddd)
+# onSurfaceVariant
+%V(130,650,220,28,8)%Vf(bba79b)
 %ac%s%pp %Sx(of) %pe
 #
 # Shuffle
 %xl(shuffle,shuffle.bmp,15,16)
-%V(10,700,60,60,-)%Vb(222222)
-%?ps<%Vf(ff9500)|%Vf(555555)>
+# on: primary, off: outline, on surfaceContainerHighest
+%V(10,700,60,60,-)%Vb(2f231b)
+%?ps<%Vf(ff9130)|%Vf(837267)>
 %T(shuffle,0,0,-,-,shuffle)
 %xd(shuffle)
 #
@@ -154,8 +171,9 @@
 #
 # Repeat mode
 %xl(r,repeat.bmp,15,16,4)
-%V(410,700,60,60,-)%Vb(222222)
-%?mm<%Vf(555555)|%Vf(ff9500)>
+# on: primary, off: outline, on surfaceContainerHighest
+%V(410,700,60,60,-)%Vb(2f231b)
+%?mm<%Vf(837267)|%Vf(ff9130)>
 %T(repeat,0,0,-,-,repmode)
 %T(0,0,-,-,setting_set,repeat,off,long_press) 
 %?mm<%xd(ra)|%xd(ra)|%xd(rb)|%xd(rc)|%xd(rd)>

@@ -63,10 +63,10 @@
 #
 # Title
 %xl(t,MD3_32.bmp,0,0,32)
-%Vl(title,7,80,40,50,-)%Vf(ff9500)
+%Vl(title,7,80,40,50,-)%Vf(ff9130)
 #c68ee7, bb80eb, b073ed, a768ec, a25fe8, a15ae0, a359d5, a85dc8, af65bb, b871af, c17fa5, ca8f9d, d2a098, d8b196, dcc298, ddd19d, dadea6, d4e8b2, cbefc0, c1f3cf, b7f4dd, aef1ea, a7ebf3, a4e2f9, a5d7fb, a9cbfa, b0bff7, b8b3f2, c1a8ed, c99ee8, cf95e5, d18ee5
 %?Li<|%xd(ta)|%xd(tb)|%xd(tc)|%xd(td)|%xd(te)|%xd(tf)|%xd(tg)|%xd(th)|%xd(ti)|%xd(tj)|%xd(tk)|%xd(tl)|%xd(tm)|%xd(tn)|%xd(to)|%xd(tp)|%xd(tq)|%xd(tr)|%xd(ts)|%xd(tt)|%xd(tu)|%xd(tv)|%xd(tw)|%xd(tx)|%xd(ty)|%xd(tz)|%xd(tA)|%xd(tB)|%xd(tC)|%xd(tD)|%xd(tE)|%xd(tF)>     
-%Vl(title,55,70,-30,50,4)%Vf(ff9500)
+%Vl(title,55,70,-30,50,4)%Vf(ff9130)
 %s%Lt
 %T(0,0,-,-,cancel)
 #
