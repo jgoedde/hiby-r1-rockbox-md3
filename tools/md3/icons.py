@@ -1,5 +1,3 @@
-"""Icon shapes for `drawing.icon`. Material icons use their 24-unit viewbox."""
-
 from PIL import ImageDraw
 
 from md3.drawing import IconShape, Point

@@ -1,5 +1,3 @@
-"""MD3 colour tokens for a variant, plus the saturated seed accent."""
-
 import re
 from dataclasses import dataclass, fields
 

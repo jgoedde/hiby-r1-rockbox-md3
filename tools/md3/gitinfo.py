@@ -1,5 +1,3 @@
-"""Version and date for the skin file headers."""
-
 import datetime
 import os
 import subprocess

@@ -1,8 +1,3 @@
-"""The colour bitmaps of a variant, drawn from geometry measured on the original Ulmiz bitmap.
-
-Boxes must line up with the viewports in templates/: every text viewport's %Vb is the colour drawn under it.
-"""
-
 import math
 
 from PIL import Image, ImageChops, ImageDraw

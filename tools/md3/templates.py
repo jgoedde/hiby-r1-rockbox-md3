@@ -1,5 +1,3 @@
-"""Skin file templates with `{{placeholder}}` substitution."""
-
 import re
 from pathlib import Path
 

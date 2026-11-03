@@ -1,5 +1,3 @@
-"""Anti-aliased drawing primitives: shapes are drawn into a supersampled mask, then composited."""
-
 import math
 from collections.abc import Callable
 

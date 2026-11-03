@@ -1,5 +1,3 @@
-"""The theme variants: light/dark scheme times seed colour."""
-
 from dataclasses import dataclass
 
 SEEDS = {"Orange": 0xFF9130, "Blue": 0x3D7BFF, "Green": 0x3FA35B, "Pink": 0xE0457B}
