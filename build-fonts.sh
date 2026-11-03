@@ -5,7 +5,7 @@
 set -e
 cd "$(dirname "$0")"
 
-OUT=.rockbox/fonts
+OUT=assets/fonts
 SRC=source-fonts
 mkdir -p "$OUT"
 

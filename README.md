@@ -9,6 +9,8 @@ A Material Design 3 Port of Simon Rothens "Ulmiz" Theme for the HiBy R1 Rockbox
 <!-- TOC -->
 
 * [Installation](#installation)
+* [Variants](#variants)
+* [Development](#development)
 * [Fonts](#fonts)
 * [Credits](#credits)
 
@@ -16,22 +18,71 @@ A Material Design 3 Port of Simon Rothens "Ulmiz" Theme for the HiBy R1 Rockbox
 
 ## Installation
 
-1. Download this repository: a [tagged release](../../releases) or **Code → Download ZIP**, then unzip it.
+1. Download a ZIP from the [latest release](../../releases/latest): one variant (e.g. `MD3-Dark-Orange-v3.0.zip`)
+   or `MD3-all-v3.0.zip` with every variant. Unzip it.
 2. Connect the HiBy R1 to your computer over USB.
-3. Copy the `.rockbox` folder from the download onto the root of the player, so that it merges with the `.rockbox`
-   folder already there. Only new files are added, all named `MD3`, so your settings and other themes stay untouched.
-   `.rockbox` is a hidden folder on macOS and Linux: press <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>.</kbd> in Finder or
-   <kbd>Ctrl</kbd>+<kbd>H</kbd> in most Linux file managers to show it.
+3. Copy the `.rockbox` folder from the ZIP onto the root of the player, so that it merges with the `.rockbox`
+   folder already there. Only new files are added, all named `MD3-…`, so your settings and other themes stay
+   untouched. `.rockbox` is a hidden folder on macOS and Linux: press <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>.</kbd> in
+   Finder or <kbd>Ctrl</kbd>+<kbd>H</kbd> in most Linux file managers to show it.
 4. Eject the player safely, then on the device open **Settings → Theme Settings → Browse Theme Files** and select
-   **MD3**.
+   the variant, e.g. **MD3-Dark-Orange**.
 
-The other files in this repository (`source-fonts/`, `convttf`, `build-fonts.sh`) are only needed to rebuild the
-fonts and do not belong on the player.
+The repository itself does not contain a ready-to-copy `.rockbox` folder; the themes are generated (see
+[Development](#development)).
+
+## Variants
+
+| Variant            | Seed      |
+|--------------------|-----------|
+| `MD3-Dark-Orange`  | `#FF9130` |
+| `MD3-Dark-Blue`    | `#3D7BFF` |
+| `MD3-Dark-Green`   | `#3FA35B` |
+| `MD3-Dark-Pink`    | `#E0457B` |
+| `MD3-Light-Orange` | `#FF9130` |
+| `MD3-Light-Blue`   | `#3D7BFF` |
+| `MD3-Light-Green`  | `#3FA35B` |
+| `MD3-Light-Pink`   | `#E0457B` |
+
+Colours are Material Design 3 TonalSpot schemes (spec 2025) computed from the seed with
+[materialyoucolor](https://pypi.org/project/materialyoucolor/). Accent fills (year pill, play button, progress bar,
+active shuffle/repeat, menu title icon, battery while charging) use the seed itself. If the seed has less than 3:1
+contrast against the background, its tone is adjusted until it does (the generator prints this).
+
+## Development
+
+`tools/generate.py` fills the skin templates in `templates/` and draws all colour bitmaps. Static files (fonts, 1-bit
+icons, `play.bmp`) live in `assets/`. It needs Python 3.15 (see `.python-version`):
+
+```sh
+python3.15 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements-dev.txt
+```
+
+```sh
+python tools/generate.py                      # all variants into dist/<variant>/.rockbox and dist/MD3-all/.rockbox
+python tools/generate.py --only Light-Blue    # one variant (repeatable)
+python tools/generate.py --only Dark-Pink --install /path/to/simdisk/.rockbox   # merge into a .rockbox folder
+```
+
+`--install` works with the Rockbox simulator (`tools/configure --target=hibyr1 --type=s`, then `make`; its
+`simdisk/.rockbox`) or with the player's `.rockbox` folder. The version in the file headers comes from
+`git describe`.
+
+Lint before committing (CI runs the same):
+
+```sh
+ruff check . && ruff format --check .
+```
+
+Releases: pushing a tag `v*` builds all variants and publishes a GitHub release with one ZIP per variant plus
+`MD3-all`. Tags containing `-rc` become pre-releases.
 
 ## Fonts
 
 The theme uses [DM Sans](https://fonts.google.com/specimen/DM+Sans). The source TTFs are in `source-fonts/`, and the
-Rockbox `.fnt` files in `.rockbox/fonts/` are generated from them with `convttf` (a Linux x86-64 build is included,
+Rockbox `.fnt` files in `assets/fonts/` are generated from them with `convttf` (a Linux x86-64 build is included,
 linked against `libfreetype.so.6`).
 
 To regenerate the fonts:

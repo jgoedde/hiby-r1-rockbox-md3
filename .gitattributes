@@ -1,0 +1,3 @@
+# Rockbox skin templates keep CRLF like the original skin files (generator writes CRLF regardless)
+*.wps.tpl -text
+*.sbs.tpl -text

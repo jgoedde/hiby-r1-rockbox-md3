@@ -1,4 +1,4 @@
-# Rockbox Theme Name: MD3
+# Rockbox Theme Name: {{name}}
 # Platform: Hiby R1 (480x800)
 # Original Author: Simon Rothen (rothen@gmx.net)
 # MD3 Port: Julian Gödde
@@ -6,19 +6,19 @@
 # iconset taken from advaitapod theme vector files
 # Repeat & Shuffle Icons derived from Gnome-Shell High Contrast Icons
 #
-# Version: 2.2
-# Date: 2026-11-03
+# Version: {{version}}
+# Date: {{date}}
 #
 # Theme File
 #
 #
 
-wps: /.rockbox/wps/MD3.wps
-sbs: /.rockbox/wps/MD3.sbs
-# Colours: MD3 dark scheme tokens, seed #FF9130 (see MD3.wps).
+wps: /.rockbox/wps/{{name}}.wps
+sbs: /.rockbox/wps/{{name}}.sbs
+# Colours: MD3 {{scheme}} scheme tokens, seed {{seed}} (see {{name}}.wps).
 # onSurface on surface (surface = flat sbs_bg.bmp, so anti-aliased text blends correctly)
-foreground color: f7e1d4
-background color: 130d09
+foreground color: {{onSurface}}
+background color: {{surface}}
 font: /.rockbox/fonts/42-DMSans-SemiBold.fnt
 iconset: /.rockbox/icons/MD3_icons.bmp
 viewers iconset: /.rockbox/icons/MD3_viewer.bmp
@@ -30,9 +30,9 @@ scrollbar width: 40
 selector type: bar (color)
 statusbar: top
 # selected item: onPrimaryContainer on primaryContainer (same pairing as the WPS title pill)
-line selector text color: ffddc6
-line selector end color: 724929
-line selector start color: 724929
+line selector text color: {{onPrimaryContainer}}
+line selector end color: {{primaryContainer}}
+line selector start color: {{primaryContainer}}
 ui viewport: -
 list padding: 38
 #touchscreen mode: point

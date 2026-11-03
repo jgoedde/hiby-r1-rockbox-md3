@@ -1,4 +1,4 @@
-# Rockbox Theme Name: MD3
+# Rockbox Theme Name: {{name}}
 # Platform: Hiby R1 (480x800)
 # Original Author: Simon Rothen (rothen@gmx.net)
 # MD3 Port: Julian Gödde
@@ -6,8 +6,8 @@
 # iconset taken from advaitapod theme vector files
 # repeat & shuffle icons derived from Gnome-Shell high contrast icons
 #
-# Version: 2.2
-# Date: 2026-11-03
+# Version: {{version}}
+# Date: {{date}}
 #
 # WPS File
 #
@@ -48,8 +48,8 @@
 %T(infoscreen,0,58,-,390,none)
 #
 ### VIEWPORTS
-# Colours: MD3 dark scheme tokens, seed #FF9130 (Material Color Utilities, TonalSpot).
-# Exception: primary is the saturated seed ff9130 itself, not the pastel TonalSpot f4bb92.
+# Colours: MD3 {{scheme}} scheme tokens, seed {{seed}} (Material Color Utilities, TonalSpot, spec 2025).
+# Exception: accent fills use the saturated seed (tone-adjusted for contrast if needed), not TonalSpot primary.
 # Rockbox has no variables, so each hex value is annotated with its token.
 # %Vb must match the pill colour in wps_bg.bmp so anti-aliased text blends correctly.
 #
@@ -58,22 +58,22 @@
 %V(10,7,32,48,-)
 %?pL<%xd(ya)|%xd(yb)|%xd(yc)|%xd(yd)|%xd(ye)|%xd(yf)|%xd(yg)|%xd(yh)|%xd(yi)|%xd(yj)|%xd(yk)|%xd(yl)|%xd(ym)|%xd(yn)|%xd(yo)|%xd(yo)|%xd(yo)|>
 # onSurfaceVariant
-%V(45,15,100,39,8) %Vf(bba79b)
+%V(45,15,100,39,8) %Vf({{onSurfaceVariant}})
 %al%?if(%pv,<=,-1000)<%ss(0,4,%pv)|%?if(%pv,>,-100)<%?if(%pv,>=,0)<%ss(0,1,%pv)|%ss(0,2,%pv)>|%ss(0,3,%pv)>>dB
 #
 # Clock
 # onSurfaceVariant
-%V(160,15,160,39,8) %Vf(bba79b)
+%V(160,15,160,39,8) %Vf({{onSurfaceVariant}})
 %ac%?cf<%ck:%cM|     %cl:%cM %cp>
 #
 # Battery
 # onSurfaceVariant
-%V(350,15,90,39,8)%Vf(bba79b)
+%V(350,15,90,39,8)%Vf({{onSurfaceVariant}})
 %ar%bl%%
-# onSurfaceVariant
-%V(450,17,15,28,-)%Vf(bba79b)
+# onSurfaceVariant; charging: accent, low: error
+%V(450,17,15,28,-)%Vf({{onSurfaceVariant}})
 %dr(4,1,6,3)
-%?bc<%Vf(99dd99)|%?bl<|%Vf(ee9999)||||>> 
+%?bc<%Vf({{accent}})|%?bl<|%Vf({{error}})||||>> 
 %bl(0,4,-,-,vertical)
 #
 # Brightness Slider
@@ -102,56 +102,56 @@
 #
 # Album
 # onSurfaceVariant on surfaceContainerHighest
-%V(36,443,284,40,8)%Vf(bba79b)%Vb(2f231b)
+%V(36,443,284,40,8)%Vf({{onSurfaceVariant}})%Vb({{surfaceContainerHighest}})
 %s%ac%?id<%id>
 #
 # Year
-# onPrimary on primary (seed orange, kept saturated)
-%V(336,443,107,40,8)%Vf(1a1410)%Vb(ff9130)
+# onAccent on accent
+%V(336,443,107,40,8)%Vf({{onAccent}})%Vb({{accent}})
 %ac%?iy<%ss(0,4,%iy)>
 #
 # Artist
 # onSurface on surfaceContainerHigh
-%V(16,490,448,54,3)%Vf(f7e1d4)%Vb(281e16)
+%V(16,490,448,54,3)%Vf({{onSurface}})%Vb({{surfaceContainerHigh}})
 %s%ac%ia
 #
 # Title
 # onPrimaryContainer on primaryContainer
-%V(16,548,448,54,4)%Vf(ffddc6)%Vb(724929)
+%V(16,548,448,54,4)%Vf({{onPrimaryContainer}})%Vb({{primaryContainer}})
 %s%ac%?mp<|%it|%t(0.5)%it;%t(0.5)|%pc %>%>|%<%< %pc|%it>
 #%s%ac%?it<%it|%fn>
 #
 # Progressbar
-# MD3 Expressive static wavy bar: wave (primary) cropped at progress, straight track
+# MD3 Expressive static wavy bar: wave (accent) cropped at progress, straight track
 # (secondaryContainer) with stop dot behind it, handle with background-coloured gaps.
 # All three bitmaps are opaque with the background baked in.
 %xl(pbtrack,pb_track.bmp,0,0)
 %xl(pbhandle,pb_handle.bmp,0,0)
-%V(0,610,-,90,-)%Vb(130d09)%Vf(ff9130)
+%V(0,610,-,90,-)%Vb({{surface}})%Vf({{accent}})
 # the touch area for the progressbar is bigger than the progressbar itself
 %T(seek,0,0,-,-,progressbar)
 %pb(22,13,436,26,pb_fill.bmp,notouch,backdrop,pbtrack,slider,pbhandle)
 #
 # Time elapsed
 # onSurfaceVariant
-%V(25,650,116,39,8)%Vf(bba79b)
+%V(25,650,116,39,8)%Vf({{onSurfaceVariant}})
 %al%pc
 #
 # Time total
 # onSurfaceVariant
-%V(339,650,116,39,8)%Vf(bba79b)
+%V(339,650,116,39,8)%Vf({{onSurfaceVariant}})
 %ar%pt
 #
 # Playlist position
 # onSurfaceVariant
-%V(130,650,220,39,8)%Vf(bba79b)
+%V(130,650,220,39,8)%Vf({{onSurfaceVariant}})
 %ac%s%pp %Sx(of) %pe
 #
 # Shuffle
 %xl(shuffle,shuffle.bmp,15,16)
-# on: primary, off: outline, on surfaceContainerHighest
-%V(10,700,60,60,-)%Vb(2f231b)
-%?ps<%Vf(ff9130)|%Vf(837267)>
+# on: accent, off: outline, on surfaceContainerHighest
+%V(10,700,60,60,-)%Vb({{surfaceContainerHighest}})
+%?ps<%Vf({{accent}})|%Vf({{outline}})>
 %T(shuffle,0,0,-,-,shuffle)
 %xd(shuffle)
 #
@@ -175,9 +175,9 @@
 #
 # Repeat mode
 %xl(r,repeat.bmp,15,16,4)
-# on: primary, off: outline, on surfaceContainerHighest
-%V(410,700,60,60,-)%Vb(2f231b)
-%?mm<%Vf(837267)|%Vf(ff9130)>
+# on: accent, off: outline, on surfaceContainerHighest
+%V(410,700,60,60,-)%Vb({{surfaceContainerHighest}})
+%?mm<%Vf({{outline}})|%Vf({{accent}})>
 %T(repeat,0,0,-,-,repmode)
 %T(0,0,-,-,setting_set,repeat,off,long_press) 
-%?mm<%xd(ra)|%xd(ra)|%xd(rb)|%xd(rc)|%xd(rd)>
+%?mm<%xd(ra)|%xd(ra)|%xd(rb)|%xd(rc)|%xd(rd)>
