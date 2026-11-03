@@ -1,0 +1,12 @@
+{
+  "name": "hiby-r1-rockbox-md3",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "pip install --user -r requirements-dev.txt",
+  // pip --user puts pytest and ruff here; the image's own (unpinned) py-utils come after
+  "remoteEnv": { "PATH": "/home/vscode/.local/bin:${containerEnv:PATH}" },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "charliermarsh.ruff"]
+    }
+  }
+}

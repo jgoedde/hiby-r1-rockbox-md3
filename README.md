@@ -64,7 +64,10 @@ contrast against the background, its tone is adjusted until it does (the generat
 | `build.py`    | Writes one variant into a `.rockbox` folder                       |
 | `gitinfo.py`  | Version and date for the file headers                             |
 
-Static files (fonts, 1-bit icons, `play.bmp`) live in `assets/`. It needs Python 3.15 (see `.python-version`):
+Static files (fonts, 1-bit icons, `play.bmp`) live in `assets/`. It needs Python 3.15 (see `.python-version`).
+
+The easiest setup is the devcontainer in `.devcontainer/` (Python 3.15, dependencies installed, `convttf` runs):
+open the repository in VS Code or WebStorm and choose **Reopen in Container**. Without it, use a venv:
 
 ```sh
 python3.15 -m venv .venv
@@ -78,7 +81,9 @@ python tools/generate.py --only Light-Blue    # one variant (repeatable)
 python tools/generate.py --only Dark-Pink --install /path/to/simdisk/.rockbox   # merge into a .rockbox folder
 ```
 
-`--install` works with the Rockbox simulator (`tools/configure --target=hibyr1 --type=s`, then `make`; its
+Inside the devcontainer only the repository is mounted, so build into `dist/` there and copy
+`dist/<variant>/.rockbox` into the simulator or player from the host. Otherwise `--install` works with the Rockbox
+simulator (`tools/configure --target=hibyr1 --type=s`, then `make`; its
 `simdisk/.rockbox`) or with the player's `.rockbox` folder. The version in the file headers comes from
 `git describe`.
 
