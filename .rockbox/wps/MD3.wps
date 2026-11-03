@@ -58,17 +58,17 @@
 %V(10,7,32,48,-)
 %?pL<%xd(ya)|%xd(yb)|%xd(yc)|%xd(yd)|%xd(ye)|%xd(yf)|%xd(yg)|%xd(yh)|%xd(yi)|%xd(yj)|%xd(yk)|%xd(yl)|%xd(ym)|%xd(yn)|%xd(yo)|%xd(yo)|%xd(yo)|>
 # onSurfaceVariant
-%V(45,15,100,30,8) %Vf(bba79b)
+%V(45,15,100,39,8) %Vf(bba79b)
 %al%?if(%pv,<=,-1000)<%ss(0,4,%pv)|%?if(%pv,>,-100)<%?if(%pv,>=,0)<%ss(0,1,%pv)|%ss(0,2,%pv)>|%ss(0,3,%pv)>>dB
 #
 # Clock
 # onSurfaceVariant
-%V(160,15,160,35,8) %Vf(bba79b)
+%V(160,15,160,39,8) %Vf(bba79b)
 %ac%?cf<%ck:%cM|     %cl:%cM %cp>
 #
 # Battery
 # onSurfaceVariant
-%V(350,15,90,30,8)%Vf(bba79b)
+%V(350,15,90,39,8)%Vf(bba79b)
 %ar%bl%%
 # onSurfaceVariant
 %V(450,17,15,28,-)%Vf(bba79b)
